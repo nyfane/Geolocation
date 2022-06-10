@@ -36,7 +36,7 @@ pipeline {
         stage ('Pushing to ECR') {
             steps {
                 sh 'docker login -u AWS -p $(aws ecr get-login-password --region us-west-2) 823008317281.dkr.ecr.us-west-2.amazonaws.com'
-                sh 'docker push account_id.dkr.ecr.us-west-2.amazonaws.com/my-docker-repo:latest'
+                sh 'docker push 823008317281.dkr.ecr.us-west-2.amazonaws.com/geolocation_ecr_rep'
 
             }
         }
