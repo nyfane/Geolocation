@@ -5,7 +5,7 @@ pipeline {
     }
     environment {
         registry = "823008317281.dkr.ecr.us-west-2.amazonaws.com/geolocation_ecr_rep"
-        registrycredential = 'jenkins-ecr'
+        registrycredential = 'eks-credential'
         dockerimage = ''
     }
     stages {
