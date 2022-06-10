@@ -19,7 +19,7 @@ spec:
           ports:
            - containerport: 8082
   # Service type loadbalancer
-  --- 
+  ---:
   apiVersion: v1
   kind: Service
   metadata:
