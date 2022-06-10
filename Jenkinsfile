@@ -35,7 +35,7 @@ pipeline {
         // Uploading Docker images into AWS ECR
         stage ('Pushing to ECR') {
             steps {
-                sh 'aws ecr get-login-password -- region us-west-2 | docker login --username AWS--password-stdin account_id.dkr.ecr.us-west-2.amazonaws.com'
+                sh 'docker login -u AWS -p $(aws ecr get-login-password --region us-west-2) 823008317281.dkr.ecr.us-west-2.amazonaws.com'
                 sh 'docker push account_id.dkr.ecr.us-west-2.amazonaws.com/my-docker-repo:latest'
 
             }
