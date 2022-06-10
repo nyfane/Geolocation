@@ -36,7 +36,7 @@ pipeline {
         stage ('Pushing to ECR') {
             steps {
                 sh 'aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin  823008317281.dkr.ecr.us-west-2.amazonaws.com'
-                sh 'docker tag 823008317281.dkr.ecr.us-west-2.amazonaws.com/geolocation_ecr_rep:latest'
+                sh 'docker tag 823008317281.dkr.ecr.us-west-2.amazonaws.com/geolocation_ecr_rep:latest .'
                 sh 'docker push 823008317281.dkr.ecr.us-west-2.amazonaws.com/geolocation_ecr_rep:latest'
 
             }
