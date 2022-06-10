@@ -3,7 +3,7 @@ pipeline {
     tools{
         maven 'M2_HOME'
     }
-    stage {
+    stages {
         stage ('checkout') {
             steps{
                 git branch: 'main', url: 'https://github.com/nyfane/Geolocation.git'
