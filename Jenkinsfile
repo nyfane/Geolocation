@@ -45,7 +45,7 @@ pipeline {
         // Deploy the image that is in ECR to our cluster
         stage ("Kube deploy") {
             steps {
-               withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'eks-credential', namespace: '', serverUrl: '') {
+               withKubeConfig(caCertificate: '', geolocation-eks: '', contextName: '', credentialsId: 'eks-credential', namespace: '', serverUrl: '') {
                     sh "kubectl apply -f eks_deploy_from_ecr.yaml"
                 }
             }
