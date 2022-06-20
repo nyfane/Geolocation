@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: Geolocation-ecr-rep-deployement
-  namespace: production
+  namespace: dev
 spec:
   replicas: 3
   selector:
