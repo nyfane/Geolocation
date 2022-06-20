@@ -45,8 +45,7 @@ pipeline {
         // Deploy the image that is in ECR to our EKS cluster
         stage ('Deploy to EKS') {
             steps {
-                withkubeconfig ([ClusterName: "my-cluster", credentialId: 'eks_credential', namespace: 'dev', serverUrl: 'https://56EB7BC1822914D4C1A3DE75B0A9256E.gr7.us-west-2.eks.amazonaws.com'])  {
-                  sh "kubectl create -f eks-deploy-from-ecr.yaml"
+                withkubeconfig ([ClusterName: "my-cluster", credentialId: 'eks_credential', namespace: 'dev', serverUrl: 'https://56EB7BC1822914D4C1A3DE75B0A9256E.gr7.us-west-2.eks.amazonaws.com']) {
                   sh "kubectl apply -f eks-deploy-from-ecr.yaml"
               }
             }
