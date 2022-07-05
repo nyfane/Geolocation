@@ -28,7 +28,7 @@ pipeline {
             steps {
                 script{
                    def mavenPom = readMavenPom.xml file: 'pom.xml'
-                   nexusArtifactUploader artifacts: [[artifactId: '${mavenPom.artifactId}', classifier: '', file: 'target/${mavenPom.artifactorId}-${mavenPom.version}.${mavenPom.packaging}', type: '${mavenPom.packaging}']], credentialsId: 'NexusID', groupId: '${mavenPom.groupID}', nexusUrl: '172.105.109.189:8081/repository/biom/', nexusVersion: 'nexus3', protocol: 'http', repository: ' biom', version: ' ${mavenPom.version}'  
+                   nexusArtifactUploader artifacts: [[artifactId: '${mavenPom.artifactId}', classifier: '', file: 'target/${mavenPom.artifactorId}-${mavenPom.version}.${mavenPom.packaging}', type: '${mavenPom.packaging}']], credentialsId: 'NexusID', groupId: '${mavenPom.groupId}', nexusUrl: '172.105.109.189:8081/repository/biom/', nexusVersion: 'nexus3', protocol: 'http', repository: ' biom', version: ' ${mavenPom.version}'  
                 }
                
             }
