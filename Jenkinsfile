@@ -49,7 +49,6 @@ pipeline {
                sh "kubectl apply -f eks-deploy-from-ecr.yaml"
                 }
             }
-        }
     }
 } 
           
