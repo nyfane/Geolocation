@@ -44,8 +44,7 @@ pipeline {
         }
         // Deploy the image that is in ECR to our EKS cluster
         stage ('Deploy to EKS') {
-            steps {
-                kubeconfigId: 'k8s' 
+            steps { 
                sh "kubectl apply -f eks-deploy-from-ecr.yaml"
                 }
             }
