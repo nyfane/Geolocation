@@ -37,7 +37,7 @@ spec:
   selector:
     app: geolocation-ecr-rep
   ports:
-  - name: http
+  - name: geolocation-ecr-rep
     protocol: TCP
     port: 80
     targetPort: 8082

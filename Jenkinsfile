@@ -42,5 +42,11 @@ pipeline {
 
             }
         }
+        // Deploy the image that is in ECR to our EKS cluster
+        stage ('Deploy to EKS') {
+            steps { 
+               sh "kubectl create -f eks-deploy-from-ecr.yaml"
+            }
+        }
     }
 }
