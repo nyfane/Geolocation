@@ -1,8 +1,8 @@
-pipeline (
+pipeline {
     agent any
-    tools (
+    tools {
         maven 'M2_HOME'
-    )
+    }
     stages {
         stage ('checkout') {
             steps{
@@ -20,4 +20,4 @@ pipeline (
             }
         }
     }
-)
+}
