@@ -47,6 +47,7 @@ pipeline {
             steps { 
                 script {
                     eksDeploy(configs: 'eks-deploy-from-ecr.yaml', credentialsId: 'eks-credentials' )
+                     sh "kubectl apply -f eks-deploy-from-ecr.yaml"
                 }
               
             }
