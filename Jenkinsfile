@@ -46,7 +46,7 @@ pipeline {
         stage ('Deploy to EKS') {
             steps { 
                 script {
-                    eks_deploy(configs: 'eks-deploy-from-ecr.yaml', credentialsId: 'eks-credentials' )
+                    eksDeploy(configs: 'eks-deploy-from-ecr.yaml', credentialsId: 'eks-credentials' )
                 }
               
             }
