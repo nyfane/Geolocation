@@ -5,7 +5,7 @@ pipeline {
     }
     environment {
         registry = "823008317281.dkr.ecr.us-west-2.amazonaws.com/geolocation_ecr_rep"
-        registrycredential = 'eks-credentials'
+        registrycredential = 'eks-credential'
         dockerimage = ''
     }
     stages {
@@ -46,7 +46,7 @@ pipeline {
         stage ('Deploy to EKS') {
             steps { 
                 script {
-                    eks_deploy(configs: 'eks-deploy-from-ecr.yaml', credentialsId: 'eks-credentials' )
+                    eksDeploy(configs: 'eks-deploy-from-ecr.yaml', credentialsId: 'eks-credentials' )
                 }
               
             }
